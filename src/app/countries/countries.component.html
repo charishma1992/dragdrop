@@ -7,7 +7,7 @@
       heckColorOuter [innerStrokeColor]=c heckColorInner [animation]="true" [animationDuration]="300"></circle-progress>
   </div> -->
   <div class="row" cdkDropList #clist="cdkDropList" [cdkDropListData]="countries" (cdkDropListDropped)="Drop($event)">
-    <div class="col-md-2 p-0 " style="margin:5px" *ngFor="let country of countries;let i = index" cdkDrag>
+    <div class="col-md-12 p-0 " style="margin:5px" *ngFor="let country of countries;let i = index" cdkDrag>
       <div class="card cardHighlight" (click)="openDetails(country)">
         <div class="card-body cardtext">
           <h5 class="card-title fontBradley" (click)="ChangeTitle(country)" >{{i+1}}.{{country.name}}</h5>

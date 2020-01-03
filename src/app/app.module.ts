@@ -11,12 +11,16 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AgmCoreModule } from '@agm/core';
 import { CountryInDetailComponent } from './country-in-detail/country-in-detail.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountriesComponent,
-    CountryInDetailComponent
+    CountryInDetailComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
