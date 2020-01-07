@@ -7,12 +7,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { CountriesComponent } from './countries/countries.component';
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { AgmCoreModule } from '@agm/core';
 import { CountryInDetailComponent } from './country-in-detail/country-in-detail.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { TravelComponent } from './travel/travel.component';
+import { MapsComponent } from './maps/maps.component';
+import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,18 @@ import { LoginComponent } from './login/login.component';
     CountriesComponent,
     CountryInDetailComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    TravelComponent,
+    MapsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    CarouselModule,
     HttpClientModule,
     DragDropModule,
+    OwlModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDiASazcyivjbEs8FhyyU09tO1qU7xIpQs'
       /* apiKey is required, unless you are a

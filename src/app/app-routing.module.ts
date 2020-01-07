@@ -4,6 +4,8 @@ import { CountriesComponent } from 'src/app/countries/countries.component';
 import { RouteResolver } from 'src/app/countries/countries.resolve';
 import { CountryInDetailComponent } from 'src/app/country-in-detail/country-in-detail.component';
 import { HomeComponent } from 'src/app/home/home.component';
+import { MapsComponent } from 'src/app/maps/maps.component';
+import { TravelComponent } from 'src/app/travel/travel.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,14 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'maps',
+    component: MapsComponent
+  },
+  {
+    path: 'travel',
+    component: TravelComponent
   },
   {
     path: 'countries',

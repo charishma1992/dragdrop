@@ -19,8 +19,8 @@ export class CountriesComponent implements OnInit, AfterViewInit  {
 
   @ViewChild('mapContainer') gmap: ElementRef;
   map: google.maps.Map;
-  lat = 40.730610;
-  lng = -73.935242;
+  lat = 140.730610;
+  lng = -173.935242;
   coordinates: any;
 
   marker: any;
@@ -75,6 +75,7 @@ export class CountriesComponent implements OnInit, AfterViewInit  {
 console.log('entered chage title', country);
 event.stopPropagation();
   }
+
   ngOnInit() {
 
     this.actRoute.data.subscribe(data => {
@@ -85,7 +86,6 @@ event.stopPropagation();
       });
       // console.log('countries', this.countries);
     });
-
     // for (this.check = 1; this.check <= this.countries.length; this.check++) {
     //   this.checkpercent = (this.check / this.countries.length) * 100;
     //   if (this.checkpercent < '30') {

@@ -4,7 +4,9 @@
     <div class="col-md-12">
       <h1 class="fontProximaheading">Country</h1>
     </div>
-    <div class="col-md-12">    <hr size="30" ></div>
+    <div class="col-md-12">
+      <hr size="30">
+    </div>
 
     <div class="col-md-12 mt-3">
       <p class="fontProximaNovaParagrah">
@@ -17,43 +19,108 @@
         islands, and other entities in addition to the traditional countries or independent states
       </p>
     </div>
-
+    <div class="col-md-12 mt-3">
+        <div class="row">
+          <div class="col-md-1 offset-md-11 pl-0">
+            <a routerLink="/countries"> View More</a>
+          </div>
+        </div>
+      </div>
   </div>
 
 
-    <div class="row topmargin">
-        <div class="col-md-12 mt-5">
-          <h1  class="fontProximaheading">Maps</h1>
+  <div class="row ">
+    <div class="col-md-12 mt-5">
+      <h1 class="fontProximaheading">Maps</h1>
+    </div>
+    <div class="col-md-12">
+      <hr size="30">
+    </div>
+    <div class="col-md-12 mt-3">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="fontProximaNovaParagrah">A map is a symbolic depiction emphasizing relationships between elements of some space, such as objects, regions,
+            or themes.</p>
         </div>
-        <div class="col-md-12">    <hr size="30" ></div>
-        <div class="col-md-12 mt-3">
-            <div class="row">
-                <div class="col-md-6">
-         <p class="fontProximaNovaParagrah">A map is a symbolic depiction emphasizing relationships between elements of some space, such as objects, regions, or themes.</p>
-         </div>
-         <div class="col-md-6">
-            <img src="assets/images/map.jfif" width="100%">
-          </div>
-         </div>
+        <div class="col-md-6">
+          <img src="assets/images/map.jfif" width="100%">
         </div>
-    
       </div>
-    <div class="row topmargin">
-        <div class="col-md-12 mt-5">
-          <h1  class="fontProximaheading">Travel</h1>
+    </div>
+    <div class="col-md-12 mt-3">
+      <div class="row">
+        <div class="col-md-1 offset-md-11 pl-0">
+          <a routerLink="/maps"> View More</a>
         </div>
-        <div class="col-md-12">    <hr size="30" ></div>
-        <div class="col-md-12 mt-3">
-          <div class="row">
-          <div class="col-md-6">
-              <p class="fontProximaNovaParagrah">Travel is the movement of people between distant geographical locations. </p>
-          </div>
-          <div class="col-md-6">
-              <img src="assets/images/travel.jfif" width="100%">
-          </div>
-        </div>
-          
-        </div>
-    
       </div>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-md-12 mt-5">
+      <h1 class="fontProximaheading">Travel</h1>
+    </div>
+    <div class="col-md-12">
+      <hr size="30">
+    </div>
+    <div class="col-md-12 mt-3">
+      <!-- <div class="row"> -->
+        <!-- <div class="col-md-6"> -->
+          <p class="fontProximaNovaParagrah">Travel is the movement of people between distant geographical locations. </p>
+        <!-- </div> -->
+        <!-- <div class="col-md-6">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" >
+                <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                  <div class="img"><img class="d-block img-fluid" src="assets/images/travel.jfif" width="100%" alt="First slide"></div>
+                </div>
+                <div class="carousel-item">
+                  <div class="img"><img class="d-block img-fluid" src="assets/images/travel1.jfif"  width="100%"  alt="Second slide"></div>
+                </div>
+                <div class="carousel-item">
+                  <div class="img"><img class="d-block img-fluid" src="assets/images/travel2.jpg" width="100%" alt="Third slide"></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="img"><img class="d-block img-fluid" src="assets/images/travel3.png" width="100%" alt="Third slide"></div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+                </a>
+              </div> 
+        </div> -->
+      <!-- </div> -->
+    </div>
+    <div class="col-md-12 mt-5 owl-carousel-margin">
+        <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+            <div class="item " *ngFor="let image of images;let i= index">
+              <img class="slide-image" src="{{image.image}}" >
+              <div class="slide-text mt-1">
+                <h4 class="fontProxima">{{image.text}}</h4>
+              </div>
+            </div>
+          </owl-carousel>
+    </div>
+    <div class="col-md-12 mt-3">
+        <div class="row">
+          <div class="col-md-1 offset-md-11 pl-0">
+            <a routerLink="/travel"> View More</a>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
+
+<!-- <div class="owl-carousel" owlCarousel>
+<div> <img class="d-block img-fluid" src="assets/images/travel.jfif" width="100%"></div> 
+<div> <img class="d-block img-fluid" src="assets/images/travel1.jfif" width="100%"></div> 
+<div> <img class="d-block img-fluid" src="assets/images/travel.jfif" width="100%"></div> 
+<div> <img class="d-block img-fluid" src="assets/images/travel1.jfif" width="100%"></div>
+</div>   -->
+
+
+
