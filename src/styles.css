@@ -13,24 +13,46 @@
   font-size:16px;
   color:#001135; 
   }
-  @font-face {
+@font-face {
     font-family: 'Proxima Nova';
     src: url("assets/Fonts/proximanova-semibold.otf");
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+  font-family: 'Oleo Nova Bold';
+  src: url("assets/Fonts/OleoScript-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Oleo Nova Regular';
+  src: url("assets/Fonts/OleoScript-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+.fontOleo{
+  font-family:'Oleo Nova Bold';
+  font-size:24px;
+  color:lightgray; 
+}
+.fontOleoRegular{
+  font-family:'Oleo Nova Regular';
+  font-size:24px;
+  color:gray; 
+}
 .fontProxima{
   font-family:'Proxima Nova';
   font-size:16px;
   color:#001135; 
-  }
-  .fontProximaheading{
+}
+.fontProximaheading{
     font-family:'Proxima Nova';
     font-size:40px;
     color:#001135; 
-    }
-  .fontProximaNovaParagrah{
+}
+.fontProximaNovaParagrah{
     font-family:'Proxima Nova';
     font-size:24px;
     color:#8c8e8f;; 
-    }
+}
