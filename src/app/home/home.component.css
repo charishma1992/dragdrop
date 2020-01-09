@@ -85,3 +85,14 @@ div.slide-text{
         font-size:14px;
     }
 }
+
+.countryImage{
+     border-radius: 50%;
+width: 68%;
+height: 133%;
+}
+.displayCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

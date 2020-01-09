@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CountriesComponent } from './countries/countries.component';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -36,6 +36,8 @@ import { OwlModule } from 'ngx-owl-carousel';
     CarouselModule,
     HttpClientModule,
     DragDropModule,
+    ReactiveFormsModule,
+    FormsModule,
     OwlModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDiASazcyivjbEs8FhyyU09tO1qU7xIpQs'

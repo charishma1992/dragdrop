@@ -3,7 +3,7 @@ import { CommonService } from 'src/app/common.service';
 import { ActivatedRoute } from '@angular/router';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Router } from '@angular/router';
-
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-countries',
@@ -16,6 +16,7 @@ export class CountriesComponent implements OnInit, AfterViewInit  {
   checkpercent: any;
   checkColorOuter: any;
   checkColorInner: any;
+  countryform: FormGroup;
 
   @ViewChild('mapContainer') gmap: ElementRef;
   map: google.maps.Map;
@@ -24,7 +25,7 @@ export class CountriesComponent implements OnInit, AfterViewInit  {
   coordinates: any;
 
   marker: any;
-  constructor(private commonservice: CommonService, private actRoute: ActivatedRoute, private route: Router) { }
+  constructor(private commonservice: CommonService, private fb: FormBuilder, private actRoute: ActivatedRoute, private route: Router) { }
 
   Drop(event: CdkDragDrop<string[]>) {
     // console.log(event);
@@ -47,33 +48,30 @@ export class CountriesComponent implements OnInit, AfterViewInit  {
       element.displaymap = false;
     });
     // console.log('entered locate on mapsi......', i, this.countries[i], this.lat, this.lng);
-    this.countries[i].displaymap = true;
-    this.coordinates = new google.maps.LatLng(this.countries[i].latlng[0], this.countries[i].latlng[1]);
-    this.setMarker(this.coordinates, this.map);
-    // console.log('entered  this.marker i......',  this.marker );
-    // console.log('entered  this.coordinates i......',  this.coordinates );
-    // console.log('entered  this.mapOptions i......',  this.mapOptions );
-    this.mapInitializer();
+    this.countries.forEach(element => {
+      if (element.name === this.countryform.value.country) {
+        element.displaymap = true;
+        this.coordinates = new google.maps.LatLng(element.latlng[0], element.latlng[1]);
+        this.setMarker(this.coordinates, this.map);
+        this.mapInitializer();
+      }
+    });
   }
   mapInitializer() {
     const mapOptions: google.maps.MapOptions = {
       center: this.coordinates,
       zoom: 8,
     };
-    console.log('entered  this.mapInitializer mapOptions value......',  mapOptions, this.map );
-
     this.map = new google.maps.Map(this.gmap.nativeElement, mapOptions);
     // this.marker.setMap(this.map);
     this.setMarker(this.coordinates , this.map);
 
    }
   openDetails(country) {
-    console.log('entered opendetails i......', country, country.name );
     this.route.navigate([`/countrydetail/${country.name}`]);
   }
   ChangeTitle(country) {
-console.log('entered chage title', country);
-event.stopPropagation();
+      event.stopPropagation();
   }
 
   ngOnInit() {
@@ -85,6 +83,10 @@ event.stopPropagation();
         element.displaymap = false;
       });
       // console.log('countries', this.countries);
+    });
+
+    this.countryform = this.fb.group({
+      country: ['']
     });
     // for (this.check = 1; this.check <= this.countries.length; this.check++) {
     //   this.checkpercent = (this.check / this.countries.length) * 100;
