@@ -84,10 +84,37 @@ div.slide-text{
         font-family: Oleo Nova Bold;
         font-size:14px;
     }
-}
 
+    .captionWidth{
+        width:20rem !important;
+    }
+   
+    
+}
+@media only screen and (min-width:701px) and (max-width:1023px){
+  .captionWidth{
+    width:20rem !important;
+}
+.rowheight{
+  height: 18rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}
+@media only screen and (min-width:1024px) and (max-width:1366px){
+  .captionWidth{
+    width:26rem !important;
+}
+.rowheight{
+  height: 25rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+}
 .countryImage{
-     border-radius: 50%;
+     /* border-radius: 50%; */
 width: 68%;
 height: 133%;
 }
@@ -95,4 +122,15 @@ height: 133%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.rowheight{
+  /* height: 30rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.captionWidth{
+  width:35rem;
 }

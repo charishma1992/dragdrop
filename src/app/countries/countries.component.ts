@@ -42,7 +42,7 @@ export class CountriesComponent implements OnInit, AfterViewInit  {
     });
     // console.log('entered  this.marker', this.marker);
   }
-  Locate(i) {
+  Locate() {
     event.stopPropagation();
     this.countries.forEach(element => {
       element.displaymap = false;
