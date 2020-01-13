@@ -132,3 +132,8 @@ height: 133%;
 .captionWidth{
   width:35rem;
 }
+.carouselalign{
+  width:100%;
+  overflow: hidden;
+      margin-left: 15px;
+}

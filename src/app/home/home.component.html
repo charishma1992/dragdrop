@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid pl-2 pr-2">
   <div class="row">
     <div class="col-md-12">
       <!-- <img src="assets/images/home page.jpg" width="100%"> -->
@@ -42,7 +42,7 @@
       </div>
     </div>
   </div>
-  <div class="row mt-5">
+  <div class="row mt-5 animated zoomIn">
     <!-- <div class="col-md-12">
       <h1 class="fontProximaheading">Country</h1>
     </div>
@@ -52,19 +52,22 @@
 
     <div class="col-md-12 mt-3 rowheight">
       <div class="row">
-        <div class="col-md-6  justify-content-center">
+        <div class="col-md-6  justify-content-center  " >
           <div style="text-align: center">
             <img src="assets/images/enjoyment.jpg" class="countryImage">
           </div>
         </div>
         <div class="col-md-6 displayCenter ">
           <!-- <div class="fontOleoRegular" style="width: 35rem;"> -->
-              <div class="fontOleoRegular captionWidth" >
-              <h1 style="color:black">Enjoyment</h1>
-              Enjoyment is what you experience when you are having a good time. You probably experience enjoyment in an amusement park, and a lack of enjoyment at the dentist....
+          <div class="fontOleoRegular captionWidth">
+            <h1 style="color:black">Enjoyment</h1>
+            Enjoyment is what you experience when you are having a good time. You probably experience enjoyment in an amusement park,
+            and a lack of enjoyment at the dentist....
           </div>
         </div>
+
       </div>
+
     </div>
 
     <!-- <div class="col-md-12 mt-3">
@@ -79,12 +82,12 @@
   <div class="row mt-5">
     <div class="col-md-12 mt-3 rowheight">
       <div class="row">
-          <div class="col-md-6 d-flex flex-row-reverse ">
-              <div class="fontOleoRegular captionWidth" >
-                <h1 style="color:black">Refreshment</h1>
-                  The free event starts in the late afternoon with luminaries, holiday music and refreshments..
-              </div>
-            </div>
+        <div class="col-md-6 d-flex flex-row-reverse ">
+          <div class="fontOleoRegular captionWidth">
+            <h1 style="color:black">Refreshment</h1>
+            The free event starts in the late afternoon with luminaries, holiday music and refreshments..
+          </div>
+        </div>
         <div class="col-md-6  justify-content-center">
           <div style="text-align: center">
             <img src="assets/images/refreshment.jpg" class="countryImage">
@@ -94,73 +97,68 @@
     </div>
 
   </div>
+  <div class="row mt-5">
+    <div class="col-md-12 mt-3 rowheight">
+      <div class="row">
+        <div class="col-md-6  justify-content-center">
+          <div style="text-align: center">
+            <img src="assets/images/enjoyment.jpg" class="countryImage">
+          </div>
+        </div>
+        <div class="col-md-6 displayCenter ">
+          <!-- <div class="fontOleoRegular" style="width: 35rem;"> -->
+          <div class="fontOleoRegular captionWidth">
+            <h1 style="color:black">Relaxation</h1>
+            Relaxation in psychology, is the emotional state of a living being, of low tension.. </div>
+        </div>
+      </div>
+    </div>
 
-  
-  <!-- <div class="row ">
-    <div class="col-md-12 mt-5">
-      <h1 class="fontProximaheading">Maps</h1>
-    </div>
+  </div>
+
+
+
+  <div class="row ">
     <div class="col-md-12">
-      <hr size="30">
+      <div class="row">
+        <div class="col-md-10 offset-md-1 mt-5">
+          <h1 class="fontOleoRegular" style="color: black;
+          font-size: 47px;">Travel</h1>
+        </div>
+      </div>
     </div>
+
+
     <div class="col-md-12 mt-3">
       <div class="row">
-        <div class="col-md-12">
-          <p class="fontProximaNovaParagrah">A map is a symbolic depiction emphasizing relationships between elements of some space, such as objects, regions,
-            or themes.</p>
+        <div class="col-md-10 offset-md-1 ">
+          <p class="fontOleoRegular">Travel is the movement of people between distant geographical locations. </p>
         </div>
-        <div class="col-md-6">
-          <img src="assets/images/map.jfif" width="100%">
-        </div> 
       </div>
     </div>
-    <div class="col-md-12 mt-3">
-        <div class="d-flex flex-row-reverse">
-            <div >
-              <a routerLink="/travel"> View More</a>
+    <div class="col-md-12 mt-5 ">
+      <div class="col-md-10 offset-md-1">
+        <div class="carouselalign">
+          <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+            <div class="item" *ngFor="let image of images;let i= index">
+              <img class="slide-image" src="{{image.image}}">
+              <div class="slide-text mt-1">
+                <h4 class="fontProxima">{{image.text}}</h4>
+              </div>
             </div>
-          </div>
-    </div>
-  </div> -->
-  <div class="row ">
-    <div class="col-md-12 mt-5">
-      <h1 class="fontProximaheading">Travel</h1>
-    </div>
-    <div class="col-md-12">
-      <hr size="30">
-    </div>
-    <div class="col-md-12 mt-3">
-
-      <p class="fontOleoRegular">Travel is the movement of people between distant geographical locations. </p>
-
-    </div>
-    <div class="col-md-12 mt-5 owl-carousel-margin">
-      <div style="width:100%">
-        <!-- <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-          <div class="item" *ngFor="let image of images;let i= index">
-            <img class="slide-image" src="{{image.image}}">
-            <div class="slide-text mt-1">
-              <h4 class="fontProxima">{{image.text}}</h4>
-            </div>
-          </div>
-        </owl-carousel> -->
-      </div>
-      <!-- <owl-carousel [options]="carouselOptions" [items]="images" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="item" *ngFor="let image of images;let i= index">
-          <img class="slide-image" src="{{image.image}}">
-          <div class="slide-text mt-1">
-            <h4 class="fontProxima">{{image.text}}</h4>
-          </div>
+          </owl-carousel>
         </div>
-      </owl-carousel> -->
+      </div>
+
+
     </div>
-    <div class="col-md-12 mt-3">
+    <!-- <div class="col-md-12 mt-3">
       <div class="d-flex flex-row-reverse">
         <div>
           <a routerLink="/travel"> View More</a>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -170,3 +168,4 @@
 <div> <img class="d-block img-fluid" src="assets/images/travel.jfif" width="100%"></div> 
 <div> <img class="d-block img-fluid" src="assets/images/travel1.jfif" width="100%"></div>
 </div>   -->
+
