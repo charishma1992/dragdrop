@@ -10,14 +10,14 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   templateUrl: './countries.component.html',
   styleUrls: ['./countries.component.css']
 })
-export class CountriesComponent implements OnInit, AfterViewInit  {
+export class CountriesComponent implements OnInit, AfterViewInit {
   countries: any = [];
   check = 0;
   checkpercent: any;
   checkColorOuter: any;
   checkColorInner: any;
   countryform: FormGroup;
-
+  countryarray: any = [];
   @ViewChild('mapContainer') gmap: ElementRef;
   map: google.maps.Map;
   lat = 140.730610;
@@ -47,14 +47,28 @@ export class CountriesComponent implements OnInit, AfterViewInit  {
     this.countries.forEach(element => {
       element.displaymap = false;
     });
-    // console.log('entered locate on mapsi......', i, this.countries[i], this.lat, this.lng);
-    this.countries.forEach(element => {
-      if (element.name === this.countryform.value.country) {
-        element.displaymap = true;
-        this.coordinates = new google.maps.LatLng(element.latlng[0], element.latlng[1]);
-        this.setMarker(this.coordinates, this.map);
-        this.mapInitializer();
-      }
+
+    this.countryarray.push(this.countryform.value.country);
+    this.countryarray.push(this.countryform.value.ToCountry);
+    console.log('entered locate on mapsi......', this.countryarray);
+    // this.countries.forEach(element => {
+    //   if (element.name === this.countryform.value.country) {
+    //     element.displaymap = true;
+    //     // this.coordinates = new google.maps.LatLng(element.latlng[0], element.latlng[1]);
+    //     // this.setMarker(this.coordinates, this.map);
+    //     // this.mapInitializer();
+    //   }
+    // });
+
+    this.countryarray.forEach(element => {
+      console.log('ensdss',element);
+      this.countries.forEach(element1 => {
+          if (element1.name === element) {
+      this.coordinates = new google.maps.LatLng(element1.latlng[0], element1.latlng[1]);
+      this.setMarker(this.coordinates, this.map);
+      this.mapInitializer();
+          }
+        });
     });
   }
   mapInitializer() {
@@ -64,14 +78,14 @@ export class CountriesComponent implements OnInit, AfterViewInit  {
     };
     this.map = new google.maps.Map(this.gmap.nativeElement, mapOptions);
     // this.marker.setMap(this.map);
-    this.setMarker(this.coordinates , this.map);
+    this.setMarker(this.coordinates, this.map);
 
-   }
+  }
   openDetails(country) {
     this.route.navigate([`/countrydetail/${country.name}`]);
   }
   ChangeTitle(country) {
-      event.stopPropagation();
+    event.stopPropagation();
   }
 
   ngOnInit() {
@@ -86,7 +100,8 @@ export class CountriesComponent implements OnInit, AfterViewInit  {
     });
 
     this.countryform = this.fb.group({
-      country: ['']
+      country: [''],
+      ToCountry: ['']
     });
     // for (this.check = 1; this.check <= this.countries.length; this.check++) {
     //   this.checkpercent = (this.check / this.countries.length) * 100;

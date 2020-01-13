@@ -22,7 +22,7 @@
   .footer{
     /* background-color: rgb(241, 237, 237); */
     color:#d5dbde;
-    box-shadow: 0px 1px 6px grey;
+    box-shadow: -1px -1px 9px #909094;
     background-image: url("/assets/images/footer.jpg");
     background-repeat: no-repeat;
     background-size: 100% 216px;
@@ -40,4 +40,31 @@
 .addressfont{
   font-size: 18px;
   font-family: fontProxima;
+}
+
+@media screen and (min-width:300px) and (max-width:760px){
+  .tagline {
+    display:none !important;
+  }
+  .mobtravelfont{
+    font-size:30px !important;
+  }
+  .mobmarginCopy{
+    margin-top: 3px !important;
+  }
+  .mobaddlfont{
+    font-size:13px !important;
+  }
+}
+.tagline {
+  display:block;
+}
+.mobtravelfont{
+  font-size:39px;
+}
+.mobmarginCopy{
+  margin-top: 17px;
+}
+.mobaddlfont{
+  font-size:17px;
 }
