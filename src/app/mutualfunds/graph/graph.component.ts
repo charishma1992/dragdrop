@@ -7,23 +7,23 @@ import { Router } from '@angular/router';
 import { CommonService } from 'src/app/common.service';
 import { NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/internal/operators/filter';
+import { Input } from '@angular/core';
 
 @Component({
-  selector: 'app-maps',
-  templateUrl: './maps.component.html',
-  styleUrls: ['./maps.component.css']
+  selector: 'app-graph',
+  templateUrl: './graph.component.html',
+  styleUrls: ['./graph.component.css']
 })
-export class MapsComponent implements OnInit {
+export class GraphComponent implements OnInit {
   data: any = [];
   data1: any;
+  @Input()
   code: any;
-  chartHeading: any;
-  constructor(private http : CommonService ,private fb: FormBuilder, private route:ActivatedRoute, private router:Router) { }
+  constructor(private http : CommonService , private route:ActivatedRoute, private router:Router) { }
   getFundHistory(){
     this.http.getFundData(this.code).subscribe(data =>{
-      console.log('data from api', data);
+      console.log('data from api', data,this.code);
       this.data1= data['data'];
-      this.chartHeading = data['meta'].scheme_name;
       this.data1.forEach(element => {
         let x = element.date.split("-");
         element.date = new Date(x[2], x[1], x[0]);
@@ -35,7 +35,7 @@ export class MapsComponent implements OnInit {
       var chart = new CanvasJS.Chart("chartContainer",
         {
           title: {
-            text: this.chartHeading
+            text: "Simple Date-Time Chart"
           },
           axisX: {
             title: "Mutual fund	",
@@ -57,9 +57,10 @@ export class MapsComponent implements OnInit {
     })
   }
   ngOnInit() {
-    this.code = this.route.snapshot.paramMap.get('code');
-    console.log('this.code',this.code);
     this.getFundHistory();
+    this.http.labelRefresh().subscribe(() => {
+      this.getFundHistory();
+    });
   }
 
 }

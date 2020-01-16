@@ -6,6 +6,7 @@ import { CountryInDetailComponent } from 'src/app/country-in-detail/country-in-d
 import { HomeComponent } from 'src/app/home/home.component';
 import { MapsComponent } from 'src/app/maps/maps.component';
 import { TravelComponent } from 'src/app/travel/travel.component';
+import { MutualfundsComponent } from 'src/app/mutualfunds/mutualfunds.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,11 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'maps',
+    path: 'funds',
+    component: MutualfundsComponent
+  },
+  {
+    path: 'fundsGraph/:code',
     component: MapsComponent
   },
   {

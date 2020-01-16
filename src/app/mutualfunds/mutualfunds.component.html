@@ -1,0 +1,20 @@
+
+<div class="container">
+ 
+    <form [formGroup]="fundForm">
+      <div class="row">
+        
+          <b>Select Fund: </b> &nbsp;
+          <select class="form-control mt-1" name="parserType" id="exampleSelect1" formControlName="fundname" >
+            <option value = "" >Select</option>
+            <option *ngFor="let fundname of funds" value="{{fundname.Name}}">{{fundname.Name}}</option>
+          </select>
+       
+      </div>
+      <div class="row" style="dispaly:flex;justify-content:center">
+        <div><button type="submit" class="btn btn-lg sbmtbtn" (click)="submit()">Submit</button></div>
+      </div>
+      </form>
+</div>
+
+<!-- <div class="mt-5" id="chartContainer" style="width: 100%; height: 400px;"></div> -->
