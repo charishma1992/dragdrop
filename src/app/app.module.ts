@@ -19,7 +19,7 @@ import { TravelComponent } from './travel/travel.component';
 import { MapsComponent } from './maps/maps.component';
 import { OwlModule } from 'ngx-owl-carousel';
 import { MutualfundsComponent } from './mutualfunds/mutualfunds.component';
-import { GraphComponent } from './mutualfunds/graph/graph.component';
+
 
 @NgModule({
   declarations: [
@@ -30,8 +30,7 @@ import { GraphComponent } from './mutualfunds/graph/graph.component';
     LoginComponent,
     TravelComponent,
     MapsComponent,
-    MutualfundsComponent,
-    GraphComponent
+    MutualfundsComponent
   ],
   imports: [
     BrowserModule,
