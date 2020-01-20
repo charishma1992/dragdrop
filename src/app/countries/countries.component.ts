@@ -51,25 +51,25 @@ export class CountriesComponent implements OnInit, AfterViewInit {
     this.countryarray.push(this.countryform.value.country);
     this.countryarray.push(this.countryform.value.ToCountry);
     console.log('entered locate on mapsi......', this.countryarray);
-    // this.countries.forEach(element => {
-    //   if (element.name === this.countryform.value.country) {
-    //     element.displaymap = true;
-    //     // this.coordinates = new google.maps.LatLng(element.latlng[0], element.latlng[1]);
-    //     // this.setMarker(this.coordinates, this.map);
-    //     // this.mapInitializer();
-    //   }
-    // });
-
-    this.countryarray.forEach(element => {
-      console.log('ensdss',element);
-      this.countries.forEach(element1 => {
-          if (element1.name === element) {
-      this.coordinates = new google.maps.LatLng(element1.latlng[0], element1.latlng[1]);
-      this.setMarker(this.coordinates, this.map);
-      this.mapInitializer();
-          }
-        });
+    this.countries.forEach(element => {
+      if (element.name === this.countryform.value.country) {
+        element.displaymap = true;
+        this.coordinates = new google.maps.LatLng(element.latlng[0], element.latlng[1]);
+        this.setMarker(this.coordinates, this.map);
+        this.mapInitializer();
+      }
     });
+
+    // this.countryarray.forEach(element => {
+    //   console.log('ensdss',element);
+    //   this.countries.forEach(element1 => {
+    //       if (element1.name === element) {
+    //   this.coordinates = new google.maps.LatLng(element1.latlng[0], element1.latlng[1]);
+    //   this.setMarker(this.coordinates, this.map);
+    //   this.mapInitializer();
+    //       }
+    //     });
+    // });
   }
   mapInitializer() {
     const mapOptions: google.maps.MapOptions = {

@@ -7,6 +7,11 @@
     text-align: center;
    
 }
+.displayCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 .cardtext{
     display: flex;
     justify-content: center;
@@ -93,3 +98,9 @@ agm-map {
     height: 300px;
 }
  
+.sbmtbtn{
+    border: 2px solid black;
+    border-radius: 1rem;
+    margin: 22px;
+    width: 100%;
+}

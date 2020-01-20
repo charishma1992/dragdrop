@@ -14,7 +14,7 @@
       </select>
    
   </div>
-  <div class="row">
+  <!-- <div class="row">
     
       <b>Select Country: </b> &nbsp;
       <select class="form-control mt-1" name="parserType" id="exampleSelect1" formControlName="ToCountry" >
@@ -22,11 +22,11 @@
         <option *ngFor="let country of countries" value="{{country.name}}">{{country.name}}</option>
       </select>
    
-  </div>
+  </div> -->
 
 
-  <div class="row">
-    <button (click)="Locate()">Locate on Maps</button>
+  <div class="row displayCenter">
+    <div class="mt-3"><button (click)="Locate()">Locate on Maps</button></div>
   </div>
 </form>
   <!-- <div class="row" cdkDropList #clist="cdkDropList" [cdkDropListData]="countries" (cdkDropListDropped)="Drop($event)">
@@ -67,3 +67,13 @@
     <agm-marker [latitude]="lat" [longitude]="lng" 
     ></agm-marker>
   </agm-map> -->
+
+  <div class="row mb-5">
+
+    </div >
+    <div class="row mb-5">
+
+      </div >
+      <div class="row mb-5">
+  
+        </div >

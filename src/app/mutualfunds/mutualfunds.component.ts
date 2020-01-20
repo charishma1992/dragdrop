@@ -28,7 +28,31 @@ export class MutualfundsComponent implements OnInit {
     {
       "Name": 'Axis Focus 25 Fund',
       "code": "120468"
-    }];
+    },
+  {
+    "Name": ' ICICI Prudential Value Discovery Fund - Dividend',
+    "code": "102595"
+  },
+  {
+    "Name": 'DSP Equity Fund - Regular Plan - Growth',
+    "code": "105875"
+  },
+  {
+    "Name": ' Axis Multicap Fund - Regular Plan - Growt',
+    "code": "141927"
+  },
+  {
+    "Name": 'Axis Midcap Fund - Regular Plan - Growth',
+    "code": "114564"
+  },
+  {
+    "Name": 'L&T Mid Cap Fund-Regular Plan-Growth',
+    "code": "112496"
+  },
+  {
+    "Name": 'Mirae Asset Emerging Bluechip Fund - Direct Plan - Growth',
+    "code": "118834"
+  }];
 
   fundForm: FormGroup;
   constructor(private http : CommonService ,private fb: FormBuilder, private route:ActivatedRoute, private router:Router) { 

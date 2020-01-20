@@ -38,7 +38,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   //     if ($(window).scrollTop()+100 <= ($(document).height() - $(window).height())) {
   //       this.check = true;
   //       document.getElementById("myP").style.visibility = "visible";
-  //       // document.getElementById("myP").style.animation = "fadeIn 3s";
+  //       document.getElementById("myP").style.animation = "fadeIn 3s";
 
   //     }
   //     // $('.footer').visi();
