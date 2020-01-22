@@ -547,9 +547,11 @@ export class MapsComponent implements OnInit {
     let currentAmount = total_units * this.latestNav;
     this.MaturityAmt = Math.round(currentAmount);
     this.SIPProfit = currentAmount - this.total_amount_invested;
-    if (this.SIPProfit > 0) {
+    
+    if (this.SIPProfit !== 0) {
       this.sipLoader = false;
       this.sipCalculated = true;
+     ;
     }
     this.SIPProfit = Math.round(this.SIPProfit);
   }
@@ -564,8 +566,8 @@ export class MapsComponent implements OnInit {
 
       this.yearlySIPReturns.push({ 'value': this.SIPProfit, 'tenure': element, 'invest_amount': this.total_amount_invested, 'current_value': this.SIPProfit + this.total_amount_invested })
     });
-    this.LumpsumProfit = this.yearlyLumpSumReturns[0].value;
-    this.SIPProfit = this.yearlySIPReturns[0].value;
+    this.LumpsumProfit = this.yearlyLumpSumReturns[2].value;
+    this.SIPProfit = this.yearlySIPReturns[2].value;
     console.log('this.yearlyLumpSumReturns and yearlySIPReturns', this.yearlyLumpSumReturns, this.yearlySIPReturns);
 
     // const table = new tabulator('#lumpsum-tabulator', {

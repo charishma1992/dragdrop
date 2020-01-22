@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-
+import { HostListener } from '@angular/core';
+declare var $:any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -70,7 +71,51 @@ export class HomeComponent implements OnInit {
     },
   ];
 
+  
   constructor() { }
+
+
+
+  @HostListener('window:scroll', ['$event'])
+  scrollHandler(event) {
+    console.log(event);
+    let x = $(window).width();
+    console.log('now you are scrolling');
+    if(x >  1024){
+    $(window).scroll(function () {
+      console.log("$(window).scrollTop()", $(window).scrollTop());
+      console.log("$(document).height()", $(document).height());
+      console.log("$(window).height()", $(window).height());
+      document.getElementById("myP1").style.visibility = 'hidden';
+      document.getElementById("myP2").style.visibility = 'hidden';
+      document.getElementById("myP3").style.visibility = 'hidden';
+      console.log($(window).scrollTop() == ($(document).height() - $(window).height()));
+      if ($(window).scrollTop()+500 > 500) {
+        this.check = true;
+        document.getElementById("myP3").style.visibility = "visible";
+        document.getElementById("myP3").style.animation = "bounceInLeft 5s";
+        // document.getElementById("myP").style.transition= "all 2s";
+
+      }
+      if ($(window).scrollTop()+500 > 1100) {
+        this.check = true;
+        document.getElementById("myP2").style.visibility = "visible";
+        document.getElementById("myP2").style.animation = "bounceInRight 5s";
+        // document.getElementById("myP").style.transition= "all 2s";
+
+      }
+      if ($(window).scrollTop()+500 > 1600) {
+        this.check = true;
+        document.getElementById("myP1").style.visibility = "visible";
+        document.getElementById("myP1").style.animation = "bounceInDown 5s";
+        // document.getElementById("myP").style.transition= "all 2s";
+
+      }
+      // $('.footer').visi();
+      // $('.footer').fadeOut();
+    })
+  }
+  }
 
   ngOnInit() {
   }

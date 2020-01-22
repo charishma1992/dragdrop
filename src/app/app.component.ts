@@ -24,31 +24,32 @@ export class AppComponent implements AfterViewInit, OnInit {
     //   this.allNumbers.push(insertNumbers);
     // }
   }
+  @HostListener('window:scroll', ['$event'])
+  scrollHandler(event) {
+    console.log(event, $(window).width());
+    console.log('now you are scrolling');
+    $(window).scroll(function () {
+      console.log("$(window).scrollTop()", $(window).scrollTop());
+      console.log("$(document).height()", $(document).height());
+      console.log("$(window).height()", $(window).height());
+      document.getElementById("myP").style.visibility = "hidden";
+      console.log($(window).scrollTop() == ($(document).height() - $(window).height()));
+      
+      if ($(window).scrollTop()+500 >= ($(document).height() - $(window).height())) {
+        this.check = true;
+        document.getElementById("myP").style.visibility = "visible";
+        document.getElementById("myP").style.animation = "bounceInLeft 5s";
+        // document.getElementById("myP").style.transition= "all 2s";
 
-  // @HostListener('window:scroll', ['$event'])
-  // scrollHandler(event) {
-  //   console.log(event);
-  //   console.log('now you are scrolling');
-  //   $(window).scroll(function () {
-  //     console.log("$(window).scrollTop()", $(window).scrollTop());
-  //     console.log("$(document).height()", $(document).height());
-  //     console.log("$(window).height()", $(window).height());
-  //     // document.getElementById("myP").style.visibility = "hidden";
-  //     console.log($(window).scrollTop() == ($(document).height() - $(window).height()));
-  //     if ($(window).scrollTop()+100 <= ($(document).height() - $(window).height())) {
-  //       this.check = true;
-  //       document.getElementById("myP").style.visibility = "visible";
-  //       document.getElementById("myP").style.animation = "fadeIn 3s";
-
-  //     }
-  //     // $('.footer').visi();
-  //     // $('.footer').fadeOut();
-  //   })
-  // }
+      }
+      // $('.footer').visi();
+      // $('.footer').fadeOut();
+    })
+  }
 
 
   ngOnInit() {
-
+    
   }
 
   ngAfterViewInit() {
