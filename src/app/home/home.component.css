@@ -137,3 +137,7 @@ height: 133%;
   overflow: hidden;
       margin-left: 15px;
 }
+
+#myP2{
+  animation: bounceInLeft;
+}

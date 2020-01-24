@@ -25,8 +25,33 @@
     <div class="row" style="box-shadow: 2px 2px 6px #bfbcbc;">
         <div class="mt-5" id="chartContainer" style="width: 100%; height: 400px;"></div>
     </div>
+    <div class="row mt-5 fontheading" style="background: #fff5f5;;padding: 12px; color:#f26716ad; text-align: center;">
+        History
+    </div>
+    <div class="row displayCenter mt-2">
+        <!-- <div id="lumpsum-tabulator"></div> -->
 
+        <table class="table table-striped fontProxima">
+            <thead>
+                <tr>
 
+                    <th scope="col">Date</th>
+                    <th scope="col">Value</th>
+                    <th scope="col">Gains</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr *ngFor="let track of data1;let i= index" >
+                    <td *ngIf="i < 10">{{track.date}}</td>
+                    <td *ngIf="i<10">{{track.nav}}</td>
+                    <td *ngIf="i<10" [ngStyle]="{'color':year.value < 0 ? 'red' : 'green'}">
+                        0%</td>
+
+                </tr> -->
+
+            </tbody>
+        </table>
+    </div>
     <div class="row mt-5 fontheading" style="background: #fff5f5;;padding: 12px; color:#f26716ad; text-align: center;">
         Investments
     </div>

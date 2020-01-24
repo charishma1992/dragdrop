@@ -50,9 +50,18 @@ export class MutualfundsComponent implements OnInit {
     "code": "112496"
   },
   {
+    "Name": 'Motilal Oswal Multicap 35 Fund (MOF35)-Direct Plan-Growth Option',
+    "code": "129046"
+  },
+  {
+    "Name":"L&T  Tax Advantage Fund-Direct Plan-Growth",
+    "code":"119417"
+  },
+  {
     "Name": 'Mirae Asset Emerging Bluechip Fund - Direct Plan - Growth',
     "code": "118834"
-  }];
+  }
+];
 
   fundForm: FormGroup;
   constructor(private http : CommonService ,private fb: FormBuilder, private route:ActivatedRoute, private router:Router) { 
