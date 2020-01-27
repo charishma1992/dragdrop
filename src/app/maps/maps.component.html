@@ -41,13 +41,17 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <tr *ngFor="let track of data1;let i= index" >
-                    <td *ngIf="i < 10">{{track.date}}</td>
+                <tr *ngFor="let track of data1;let i= index" >
+                    <td *ngIf="i < 10">{{track.utcDate}}</td>
                     <td *ngIf="i<10">{{track.nav}}</td>
-                    <td *ngIf="i<10" [ngStyle]="{'color':year.value < 0 ? 'red' : 'green'}">
-                        0%</td>
+                    <td *ngIf="i<10" [ngStyle]="{'color':track.gains < 0 ? 'red' : 'green'}">
+                            <i class="fa fa-arrow-up" style="font-size:10px" [ngStyle]="{'color':track.gains < 0 ? 'red' : 'green'}" *ngIf="track.gains > 0"
+                                    aria-hidden="true"></i>
+                                <i class="fa fa-arrow-down" style="font-size:10px" [ngStyle]="{'color':track.gains < 0 ? 'red' : 'green'}" *ngIf="track.gains < 0"
+                                    aria-hidden="true"></i>
+                            {{track.gains}}%</td>
 
-                </tr> -->
+                </tr>
 
             </tbody>
         </table>

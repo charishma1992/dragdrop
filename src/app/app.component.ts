@@ -26,14 +26,14 @@ export class AppComponent implements AfterViewInit, OnInit {
   }
   @HostListener('window:scroll', ['$event'])
   scrollHandler(event) {
-    console.log(event, $(window).width());
-    console.log('now you are scrolling');
+    // console.log(event, $(window).width());
+    // console.log('now you are scrolling');
     $(window).scroll(function () {
-      console.log("$(window).scrollTop()", $(window).scrollTop());
-      console.log("$(document).height()", $(document).height());
-      console.log("$(window).height()", $(window).height());
+      // console.log("$(window).scrollTop()", $(window).scrollTop());
+      // console.log("$(document).height()", $(document).height());
+      // console.log("$(window).height()", $(window).height());
       document.getElementById("myP").style.visibility = "hidden";
-      console.log($(window).scrollTop() == ($(document).height() - $(window).height()));
+      // console.log($(window).scrollTop() == ($(document).height() - $(window).height()));
       
       if ($(window).scrollTop()+500 >= ($(document).height() - $(window).height())) {
         this.check = true;

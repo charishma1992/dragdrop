@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { CommonService } from 'src/app/common.service';
 import { NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/internal/operators/filter';
-import * as tabulator from 'src/assets/tabulator.js'; // 'tabulator-tables';
+
 
 @Component({
   selector: 'app-maps',
@@ -295,11 +295,21 @@ export class MapsComponent implements OnInit {
       this.latestNav = this.data1[0].nav;
       this.increment = this.data1[0].nav - this.data1[1].nav;
       // this.increment = Math.round(this.increment * 100) / 1000;
+     
       this.data1.forEach(element => {
         let x = element.date.split("-");
         element.date = new Date(x[2], x[1] - 1, x[0]);
         element.nav = parseFloat(element.nav);
+        element.gains = 0
+        element.utcDate='';
       });
+     
+      for(let i=0;i<10;i++){
+          this.data1[i].gains = this.data1[i].nav - this.data1[i+1].nav;
+          this.data1[i].gains=  this.data1[i].gains.toFixed(3);
+          this.data1[i].utcDate = this.data1[i].date.toLocaleDateString();
+      }
+   
       // this.CalculateLumpSUM(100000,3);
       // this.CalculateSIP(1000,3);
       this.ReturnsCalculator();
@@ -443,14 +453,14 @@ export class MapsComponent implements OnInit {
   }
   CalculateSIP() {
     this.sipLoader = true;
-    console.log('sipLoader',this.sipLoader)
+   
     let amt = parseInt(this.sipForm.value.sipAmount);
     let tenure = this.sipForm.value.sipTenure;
    
     var d = new Date();
     var d1 = new Date();
     d.setFullYear(d.getFullYear() - tenure);
-    console.log('amt',amt,tenure, d)
+   
     let units = 0;
     let amount_invested = amt;
     this.total_amount_invested = 0;
@@ -460,7 +470,7 @@ export class MapsComponent implements OnInit {
     // d.setMonth(d.getMonth()+1)
 
     while (d1 >= d) {
-      console.log('d1 d',d,d.getDay())
+     
       this.holidays.forEach(element => {
         if (parseInt(element.year) === d.getFullYear()) {
           element.holidays.forEach(element1 => {
@@ -515,11 +525,11 @@ export class MapsComponent implements OnInit {
           if (z === d.getMonth()) {
             // console.log('***month***');
             if (this.data1[i].date.toLocaleDateString() === d.toLocaleDateString()) {
-              console.log('d.toLocaleDateString() if********',d);
+            
               units = amount_invested / this.data1[i].nav;
-              console.log('units if********',units);
+         
               this.total_amount_invested = this.total_amount_invested + amount_invested;
-              console.log('total_amount_invested if********',this.total_amount_invested);
+            
               total_units = total_units + units
               // break;
             }
@@ -543,7 +553,6 @@ export class MapsComponent implements OnInit {
       d.setMonth(d.getMonth() + 1);
 
     }
-    console.log('***month***', total_units, this.total_amount_invested);
     let currentAmount = total_units * this.latestNav;
     this.MaturityAmt = Math.round(currentAmount);
     this.SIPProfit = currentAmount - this.total_amount_invested;
